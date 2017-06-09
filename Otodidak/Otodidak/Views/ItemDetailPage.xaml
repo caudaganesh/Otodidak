@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Otodidak.Views.ItemDetailPage">
+    <ContentPage.ToolbarItems>
+        
+        <ToolbarItem Icon="ic_bookmark_white_24dp.png" 
+                     x:Name="BookmarkButton"
+                     Text="Markah"
+                     Clicked="BookmarkButton_Clicked"/>
+        <ToolbarItem Icon="ic_share_white_24dp.png" 
+                     x:Name="ShareButton"
+                     Text="Bagikan"
+                     Clicked="ShareButton_Clicked"/>
+        <ToolbarItem Icon="ic_link_white_24dp.png"
+                     x:Name="LinkButton"
+                     Text="Tautan"
+                     Clicked="LinkButton_Clicked"/>
+        <ToolbarItem Icon="ic_shuffle_white_24dp.png"
+                     x:Name="ShuffleButton"
+                     Text="Acak"
+                     Clicked="ShuffleButton_Clicked"/>
+        <ToolbarItem Icon="ic_refresh_white_24dp.png"
+                     x:Name="RefreshButton"
+                     Text="Ulang"
+                     Clicked="RefreshButton_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <Grid HorizontalOptions="FillAndExpand"
+          VerticalOptions="FillAndExpand"
+          RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0"
+              BackgroundColor="{StaticResource Primary}"
+              HorizontalOptions="FillAndExpand"
+              RowSpacing="0">
+            <Label Text="{Binding Title, Converter={StaticResource UpperCaseHelper}}"
+                   FontSize="17"
+                   Margin="5,10"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Start" />
+        </Grid>
+        <WebView x:Name="ContentWebView"
+                 Grid.Row="1"/>
+        
+    </Grid>
+    
+</ContentPage>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Otodidak.Views.HeaderPage"
+             Title="Halaman Utama">
+    <ListView x:Name="HeaderListView"
+              ItemsSource="{Binding HeaderPosts}"
+              VerticalOptions="FillAndExpand"
+              HasUnevenRows="true"
+              RefreshCommand="{Binding LoadHeaderCommand}"
+              IsPullToRefreshEnabled="true"
+              IsRefreshing="{Binding IsHeaderBusy, Mode=OneWay}"
+              CachingStrategy="RecycleElement"
+              ItemSelected="OnItemSelected">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid Margin="0,0,0,20">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="200" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Image Aspect="AspectFill"
+                               HorizontalOptions="FillAndExpand"
+                               Source="{Binding ImageUrl}"
+                               Grid.Row="0"
+                               Grid.RowSpan="2" />
+                        <StackLayout Grid.Row="1"
+                                     Orientation="Horizontal"
+                                     VerticalOptions="Start"
+                                     Padding="20"
+                                     BackgroundColor="{StaticResource Primary}">
+                            <Label TextColor="White"
+                                   Text="{Binding Title, Converter={StaticResource UpperCaseHelper}}"
+                                   FontSize="15"
+                                   LineBreakMode="CharacterWrap"
+                                   FontAttributes="Bold">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <OnPlatform.iOS>MarkerFelt-Thin</OnPlatform.iOS>
+                                        <OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
+                                        <OnPlatform.WinPhone>"Comic Sans MS</OnPlatform.WinPhone>
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                        </StackLayout>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
