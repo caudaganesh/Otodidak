@@ -45,7 +45,7 @@ namespace Otodidak.ViewModels
 
                 using (var client = new HttpClient())
                 {
-                    if (!posturl.Contains("http:")) posturl = "http:" + posturl;
+                    if (!posturl.Contains("https:")) posturl = "https:" + posturl;
                     htmlPage = await client.GetStringAsync(posturl).ConfigureAwait(false);
                 }
 
@@ -80,7 +80,7 @@ namespace Otodidak.ViewModels
                 // Get Title
                 var title = htmlDocument.DocumentNode
                 .Descendants("h1")
-                .Where(o => o.GetAttributeValue("class", "") == "firstHeading").FirstOrDefault() ;
+                .Where(o => o.GetAttributeValue("class", "").Contains("firstHeading")).FirstOrDefault() ;
 
                 var match = Regex.Match(title.InnerHtml, @"(<a.*?>.*?</a>)", RegexOptions.Singleline);
                 string titles = Regex.Replace(match.Groups[1].Value, @"\s*<.*?>\s*", "");

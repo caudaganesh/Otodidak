@@ -136,7 +136,7 @@ namespace Otodidak.ViewModels
                     //"http://id.wikihow.com" +
                     newPosts.Title ="CARA "+ title;
                     newPosts.ImageUrl = imageUrl;
-                    newPosts.PostUrl = "http://id.wikihow.com" + url;
+                    newPosts.PostUrl = "https://id.wikihow.com" + url;
 
                     HeaderPosts.Add(newPosts);
 
