@@ -49,35 +49,33 @@ namespace Otodidak
             
             Current.MainPage = new TabbedPage
             {
-                
-
                 Children =
                 {
                     new NavigationPage(new HeaderPage())
                     {
-                        Title = "Halaman Utama",
+                        //Title = "Halaman Utama",
 
                         Icon = "ic_home_white_24dp.png"
                     },
                     new NavigationPage(new HotPage())
                     {
-                        Title = "Hot",
+                        //Title = "Hot",
 
                         Icon = "HotIcon.png"
                     },
                     new NavigationPage(new CategoryPage())
                     {
-                        Title = "Kategori",
+                        //Title = "Kategori",
                         Icon = "ic_apps_white_24dp.png"
                     },
                     new NavigationPage(new FavoritePage())
                     {
-                        Title = "Favorit",
+                        //Title = "Favorit",
                         Icon = "ic_favorite_white_24dp.png"
                     },
                     new NavigationPage(new BookmarkPage())
                     {
-                        Title = "Markah",
+                        //Title = "Markah",
                         Icon = "ic_bookmark_white_24dp.png"
                     },
                 }
