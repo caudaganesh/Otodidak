@@ -45,7 +45,7 @@ namespace Otodidak.Helpers
                 head.Append(string.Format("table {{width:auto;border-width:thin; border-style:solid;border-color:rgb(0,0,0);}}"));
                 head.Append(string.Format("table td {{width:auto;border-width:thin; border-style:solid;border-color:rgb(0,0,0); font-size:5px;}}"));
                 head.Append(string.Format("table tr {{width:auto;border-width:thin; border-style:solid;border-color:rgb(0,0,0);}}"));
-                head.Append(string.Format("div {{height:auto;}}"));
+                head.Append(string.Format("div {{height:auto; display:block; overflow-x:hidden;}}"));
                 head.Append(string.Format("td {{font-size:5pt;}}"));
                 head.Append(string.Format("blockquote {{width:auto; display: inline;margin-top: 1em;margin-bottom: 1em; color:gray;font-style:italic;font-weight:normal;font-size:15px}}"));
                 head.Append(string.Format("li {{ background-color:white; margin-top:5px; padding:5px 5px 5px 5px;}}"));

@@ -22,14 +22,17 @@ namespace Otodidak.Helpers
                 string urls = "";
 
                 imageUrl = Regex.Match(div.OuterHtml, "<img.+?src=[\"'](.+?)[\"'].*?>", RegexOptions.IgnoreCase).Groups[1].Value;
-                title = div.InnerText;
+                //title = div.InnerText;
+                title = Regex.Match(div.InnerHtml, "<a.+?href=[\"'](.+?)[\"'].*?>", RegexOptions.IgnoreCase).Groups[1].Value;
                 urls = Regex.Match(div.OuterHtml, "<a.+?href=[\"'](.+?)[\"'].*?>", RegexOptions.IgnoreCase).Groups[1].Value;
 
                 title = WebUtility.HtmlDecode(title);
+                title = title.Replace("//id.wikihow.com/", "");
+                title = title.Replace("-", " ");
 
                 newPosts.Title = title;
                 newPosts.ImageUrl = imageUrl;
-                if (!urls.Contains("http:")) urls = "http:" + urls;
+                //if (!urls.Contains("https:")) urls = "https:" + urls;
                 newPosts.PostUrl = urls;
 
                 Posts.Add(newPosts);
