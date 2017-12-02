@@ -15,21 +15,18 @@
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
-                    <Grid Margin="0,0,0,20">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="200" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
+                    <StackLayout 
+                        Margin="0,0,0,8"
+                        BackgroundColor="Aqua"
+                        Spacing="0">
                         <Image Aspect="AspectFill"
                                HorizontalOptions="FillAndExpand"
-                               Source="{Binding ImageUrl}"
-                               Grid.Row="0"
-                               Grid.RowSpan="2" />
-                        <StackLayout Grid.Row="1"
-                                     Orientation="Horizontal"
+                               Source="{Binding ImageUrl}"/>
+                        <StackLayout Orientation="Horizontal"
                                      VerticalOptions="Start"
-                                     Padding="20"
-                                     BackgroundColor="{StaticResource Primary}">
+                                     BackgroundColor="{StaticResource Primary}"
+                                     Padding="16"
+                                     Spacing="0">
                             <Label TextColor="White"
                                    Text="{Binding Title, Converter={StaticResource UpperCaseHelper}}"
                                    FontSize="15"
@@ -44,7 +41,7 @@
                                 </Label.FontFamily>
                             </Label>
                         </StackLayout>
-                    </Grid>
+                    </StackLayout>
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Otodidak.Views.HotPage"
@@ -16,13 +16,12 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>>
-                        <StackLayout Margin="5"
+                        <StackLayout Margin="4"
                                      Orientation="Horizontal"
                                      HorizontalOptions="FillAndExpand"
                                      VerticalOptions="FillAndExpand"
                                      BackgroundColor="White">
-                            <Image Grid.RowSpan="2"
-                                   Aspect="AspectFill"
+                            <Image Aspect="AspectFill"
                                    WidthRequest="100"
                                    HeightRequest="100"
                                    Source="{Binding ImageUrl}" />
@@ -30,10 +29,10 @@
                                          VerticalOptions="FillAndExpand"
                                          Padding="10">
                             <Label Text="{Binding Title}"
-                                    FontSize="16"
+                                   FontSize="16"
                                    TextColor="Black"
-                                    HorizontalOptions="Start"
-                                    VerticalOptions="Start" />
+                                   HorizontalOptions="Start"
+                                   VerticalOptions="Start" />
                                 <Grid HeightRequest="1"
                                       HorizontalOptions="FillAndExpand"
                                       BackgroundColor="Black"
